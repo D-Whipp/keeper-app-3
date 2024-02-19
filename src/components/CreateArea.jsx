@@ -19,6 +19,7 @@ function CreateArea(props) {
     });
 
     function handleChange(event) {
+        // event.preventDefault();
         const { name, value } = event.target;
 
         setNoteContent((previousValue) => {
@@ -54,7 +55,7 @@ function CreateArea(props) {
                 <button
                     onClick={() => {
                         props.onAdd(noteContent);
-                        setNoteContent("");
+                        setNoteContent('');
                     }}
                 >
                     Add
