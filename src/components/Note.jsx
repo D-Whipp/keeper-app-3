@@ -1,18 +1,16 @@
 import React from 'react';
 
 function Note(props) {
-    console.log('props: ', props);
+    function handleClick() {
+        props.onDelete(props.id);
+    }
+
+    console.log('props notes: ', props);
     return (
         <div className="note">
-            <h1>{props.noteTitle}</h1>
-            <p>{props.noteBody}</p>
-            <button
-                onClick={() => {
-                    props.onChecked(props.id);
-                }}
-            >
-                DELETE
-            </button>
+            <h1>{props.title}</h1>
+            <p>{props.content}</p>
+            <button onClick={handleClick}>DELETE</button>
         </div>
     );
 }
